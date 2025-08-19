@@ -1,0 +1,124 @@
+/* Basic layout */
+:root {
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.controls {
+  width: 340px;
+  max-width: 100%;
+  padding: 24px 20px 32px;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+}
+
+.controls h1 {
+  margin: 0 0 16px;
+  font-size: 20px;
+}
+
+.controls label { 
+  display: block; 
+  font-size: 13px; 
+  color: var(--muted);
+  margin: 14px 0 6px; 
+}
+
+.controls input[type="text"],
+.controls select,
+.controls input[type="color"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.controls input[type="file"] {
+  width: 100%;
+}
+
+.preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  gap: 16px;
+}
+
+#canvas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 128px;
+  min-height: 128px;
+  background: #fff;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.download-buttons button {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.download-buttons button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Range controls */
+.controls input[type="range"] {
+  width: 100%;
+}
+
+/* Reset size button */
+.controls #reset-size {
+  width: 100%;
+  margin-top: 8px;
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.controls #reset-size:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}

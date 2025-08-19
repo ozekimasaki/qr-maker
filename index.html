@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Maker</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="controls">
+        <h1>QR Code Generator</h1>
+
+        <label for="url-input">Text or URL</label>
+        <input type="text" id="url-input" placeholder="https://example.com" />
+
+        <label for="dot-color-input">Dot color</label>
+        <input type="color" id="dot-color-input" value="#000000" />
+
+        <label for="bg-color-input">Background color</label>
+        <input type="color" id="bg-color-input" value="#ffffff" />
+
+        <label for="dot-type-select">Dot type</label>
+        <select id="dot-type-select">
+          <option value="square" selected>square</option>
+          <option value="rounded">rounded</option>
+          <option value="dots">dots</option>
+        </select>
+
+        <label for="corner-type-select">Corner type</label>
+        <select id="corner-type-select">
+          <option value="square" selected>square</option>
+          <option value="dot">dot</option>
+          <option value="extra-rounded">extra-rounded</option>
+        </select>
+
+        <label for="image-input">Center image</label>
+        <input type="file" id="image-input" accept="image/*" />
+
+        <label for="width-range">Width (px)</label>
+        <input type="range" id="width-range" min="128" max="1024" step="1" value="320" />
+        <div id="width-value" class="range-value">320 px</div>
+
+        <label for="height-range">Height (px)</label>
+        <input type="range" id="height-range" min="128" max="1024" step="1" value="320" />
+        <div id="height-value" class="range-value">320 px</div>
+
+        <button id="reset-size">Reset size</button>
+
+        <label for="margin-range">Quiet zone (margin, px)</label>
+        <input type="range" id="margin-range" min="0" max="64" step="1" value="0" />
+
+        <label for="error-level-select">Error correction</label>
+        <select id="error-level-select">
+          <option value="L">L</option>
+          <option value="M">M</option>
+          <option value="Q" selected>Q</option>
+          <option value="H">H</option>
+        </select>
+
+        <label for="logo-size-range">Logo size (0.1–0.6)</label>
+        <input type="range" id="logo-size-range" min="0.1" max="0.6" step="0.05" value="0.5" />
+
+        <label for="logo-roundness-range">Logo roundness (%)</label>
+        <input type="range" id="logo-roundness-range" min="0" max="50" step="1" value="12" />
+      </div>
+
+      <div class="preview">
+        <div id="canvas"></div>
+        <div class="download-buttons">
+          <button id="download-svg">Download SVG</button>
+          <button id="download-png">Download PNG</button>
+          <button id="download-jpeg">Download JPEG</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
