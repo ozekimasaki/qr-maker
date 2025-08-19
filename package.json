@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cf:dev": "vite build && npx wrangler dev",
+    "cf:deploy": "vite build && npx wrangler deploy",
+    "cf:login": "npx wrangler login"
   },
   "dependencies": {
     "qr-code-styling": "^1.6.0"
